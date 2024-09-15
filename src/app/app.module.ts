@@ -8,9 +8,10 @@ import { MaterialModule } from './modules/material.module';
 import { ViewEmployeesComponent } from './components/view-employees/view-employees.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { EmployeeRegisterComponent } from './components/employee-register/employee-register.component';
 
 @NgModule({
-  declarations: [AppComponent, ViewEmployeesComponent],
+  declarations: [AppComponent, ViewEmployeesComponent, EmployeeRegisterComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
