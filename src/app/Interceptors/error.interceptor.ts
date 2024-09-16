@@ -8,7 +8,6 @@ import {
 } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 
 @Injectable()
@@ -21,17 +20,26 @@ export class ErrorInterceptor implements HttpInterceptor {
   ): Observable<HttpEvent<any>> {
     return next.handle(req).pipe(
       catchError((error: HttpErrorResponse) => {
-        if (error.error instanceof ErrorEvent) {
-        } else {
-          switch (error.status) {
-            case 404:
-              this.router.navigate(['/error/404']);
-              break;
-            default:
-              this.router.navigate(['/error/500']);
-          }
+        console.log('error status', error.status);
+
+        // error handling for status 200
+        if (error.status === 200) {
+          return next.handle(req);
         }
-        return throwError(() => new Error(error.message));
+
+        // Handle other errors
+        switch (error.status) {
+          case 404:
+            this.router.navigate(['/error/404']);
+            break;
+          case 500:
+            this.router.navigate(['/error/500']);
+            break;
+          default:
+            break;
+        }
+
+        return throwError(() => new Error(error.message)); // Propagate other errors
       })
     );
   }
