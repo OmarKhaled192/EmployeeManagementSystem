@@ -15,37 +15,38 @@
 
   <mat-card>
     <mat-card-content>
-      <form class="row g-3" [formGroup]="myForm" (ngSubmit)="onSubmit()">
+      <form class="row g-3" [formGroup]="myForm" >
         <div class="col-md-12">
           <mat-form-field appearance="fill">
             <mat-label>Name</mat-label>
-            <input matInput formControlName="name" required>
+            <input matInput [value]="oldData.name" formControlName="name" required>
           </mat-form-field>
         </div>
 
         <div class="col-md-12">
           <mat-form-field appearance="fill">
             <mat-label>position</mat-label>
-            <input matInput formControlName="position" required>
+            <input matInput [value]="oldData.position" formControlName="position" required>
           </mat-form-field>
         </div>
 
         <div class="col-md-12">
           <mat-form-field appearance="fill">
             <mat-label>department</mat-label>
-            <input matInput formControlName="department" required>
+            <input matInput [value]="oldData.department" formControlName="department" required>
           </mat-form-field>
         </div>
 
         <div class="col-md-12">
           <mat-form-field appearance="fill">
             <mat-label>salary</mat-label>
-            <input matInput formControlName="salary" required>
+            <input matInput [value]="oldData.salary" formControlName="salary" required>
           </mat-form-field>
         </div>
 
         <div class="col-md-3">
-          <button mat-raised-button color="primary" type="submit" [disabled]="myForm.invalid">Submit</button>
+          <button *ngIf="!id" (click)="onSubmitCreate()" mat-raised-button color="primary" type="submit" [disabled]="myForm.invalid">Submit</button>
+          <button *ngIf="id" (click)="OnSubmitUpdate(id)" mat-raised-button color="primary" type="submit" [disabled]="myForm.invalid">Update</button>
         </div>
       </form>
     </mat-card-content>

@@ -7,6 +7,7 @@ const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch:'full'},
   {path: 'home', component: ViewEmployeesComponent},
   {path: 'register', component: EmployeeRegisterComponent},
+  {path: 'register/:id', component: EmployeeRegisterComponent},
 ];
 
 @NgModule({

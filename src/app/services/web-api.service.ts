@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Employee } from '../interfaces/employee';
 
 @Injectable({
   providedIn: 'root',
@@ -13,7 +14,7 @@ export class WebApiService {
     this.endPoint = 'employees';
   }
 
-  CreateEmployee(body: any): Observable<any> {
+  CreateEmployee(body: Employee): Observable<any> {
     return this.http.post(`${this.baseUrl}/${this.endPoint}`, body);
   }
 
@@ -25,7 +26,7 @@ export class WebApiService {
     return this.http.get(`${this.baseUrl}/${this.endPoint}/${id}`);
   }
 
-  UpdateEmployee(id: string, body: any): Observable<any> {
+  UpdateEmployee(id: string, body: Employee): Observable<any> {
     return this.http.put(`${this.baseUrl}/${this.endPoint}/${id}`, body);
   }
 
