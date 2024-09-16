@@ -1,4 +1,3 @@
-import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -11,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { EmployeeRegisterComponent } from './components/employee-register/employee-register.component';
 import { EmployeeDetailsComponent } from './components/employee-details/employee-details.component';
 import { DialogDeleteComponent } from './components/dialog-delete/dialog-delete.component';
+import { NgModule } from '@angular/core';
 
 @NgModule({
   declarations: [
