@@ -1,0 +1,8 @@
+<h1 mat-dialog-title class="text-warning d-flex align-items-center pt-2"> <mat-icon>warning</mat-icon> Warning</h1>
+<div mat-dialog-content>
+  Are You Sure To Delete Employee?
+</div>
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button (click)="DeleteEmployee(data.id)" mat-button cdkFocusInitial>Yes</button>
+</div>

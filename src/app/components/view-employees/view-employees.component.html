@@ -55,7 +55,7 @@
               </button>
             </div>
             <div class="example-button-container">
-              <button mat-fab color="warn" aria-label="Example icon button with a delete icon">
+              <button (click)="openDialog('100ms', '100ms', element._id)" mat-fab color="warn" aria-label="Example icon button with a delete icon">
                 <mat-icon>delete</mat-icon>
               </button>
             </div>

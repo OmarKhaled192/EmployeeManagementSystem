@@ -10,9 +10,16 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { EmployeeRegisterComponent } from './components/employee-register/employee-register.component';
 import { EmployeeDetailsComponent } from './components/employee-details/employee-details.component';
+import { DialogDeleteComponent } from './components/dialog-delete/dialog-delete.component';
 
 @NgModule({
-  declarations: [AppComponent, ViewEmployeesComponent, EmployeeRegisterComponent, EmployeeDetailsComponent],
+  declarations: [
+    AppComponent,
+    ViewEmployeesComponent,
+    EmployeeRegisterComponent,
+    EmployeeDetailsComponent,
+    DialogDeleteComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
