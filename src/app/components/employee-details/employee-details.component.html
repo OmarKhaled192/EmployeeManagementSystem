@@ -1,0 +1,33 @@
+<section class="container">
+  <div class="py-2 my-3">
+    <mat-card>
+      <mat-card-content>
+        <button [routerLink]="['/home']" routerLinkActive="router-link-active"
+          class="d-flex justify-content-center align-items-center m-0  " mat-button color="primary">
+          <mat-icon>home</mat-icon>
+          <p class="m-0">
+            Go To Home
+          </p>
+        </button>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div class="card">
+    <h2 class="card-header text-capitalize">
+      {{allData.name}}
+    </h2>
+    <div class="card-body">
+      <p class="card-text">
+        department : {{allData.department}}
+      </p>
+      <p class="card-text">
+        position : {{allData.position}}
+      </p>
+      <p class="card-text">
+        salary : {{allData.salary}}
+      </p>
+      <a [routerLink]="['/register/'+ allData._id]" class="btn btn-primary">Update</a>
+    </div>
+  </div>
+</section>

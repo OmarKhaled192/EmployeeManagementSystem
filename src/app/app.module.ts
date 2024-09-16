@@ -9,9 +9,10 @@ import { ViewEmployeesComponent } from './components/view-employees/view-employe
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { EmployeeRegisterComponent } from './components/employee-register/employee-register.component';
+import { EmployeeDetailsComponent } from './components/employee-details/employee-details.component';
 
 @NgModule({
-  declarations: [AppComponent, ViewEmployeesComponent, EmployeeRegisterComponent],
+  declarations: [AppComponent, ViewEmployeesComponent, EmployeeRegisterComponent, EmployeeDetailsComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
