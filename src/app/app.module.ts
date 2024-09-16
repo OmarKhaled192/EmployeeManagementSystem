@@ -6,12 +6,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './modules/material.module';
 import { ViewEmployeesComponent } from './components/view-employees/view-employees.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { EmployeeRegisterComponent } from './components/employee-register/employee-register.component';
 import { EmployeeDetailsComponent } from './components/employee-details/employee-details.component';
 import { DialogDeleteComponent } from './components/dialog-delete/dialog-delete.component';
 import { NgModule } from '@angular/core';
 import { ErrorsComponent } from './components/errors/errors.component';
+import { ErrorInterceptor } from './Interceptors/error.interceptor';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,13 @@ import { ErrorsComponent } from './components/errors/errors.component';
     ReactiveFormsModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ErrorInterceptor,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
