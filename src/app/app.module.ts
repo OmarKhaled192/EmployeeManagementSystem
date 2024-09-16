@@ -11,6 +11,7 @@ import { EmployeeRegisterComponent } from './components/employee-register/employ
 import { EmployeeDetailsComponent } from './components/employee-details/employee-details.component';
 import { DialogDeleteComponent } from './components/dialog-delete/dialog-delete.component';
 import { NgModule } from '@angular/core';
+import { ErrorsComponent } from './components/errors/errors.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { NgModule } from '@angular/core';
     EmployeeRegisterComponent,
     EmployeeDetailsComponent,
     DialogDeleteComponent,
+    ErrorsComponent,
   ],
   imports: [
     BrowserModule,
